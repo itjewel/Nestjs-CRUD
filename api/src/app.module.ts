@@ -3,6 +3,7 @@ import { TypeOrmModule } from '@nestjs/typeorm';
 import { AppController } from './app.controller';
 import { AppService } from './app.service';
 import { ConfigModule } from '@nestjs/config';
+import { FeedModule } from './feed/feed.module';
 
 console.log(process.env.POSTGRES_USER);
 @Module({
@@ -19,6 +20,7 @@ console.log(process.env.POSTGRES_USER);
       synchronize: true,
       logging: true,
     }),
+    FeedModule,
   ],
   controllers: [AppController],
   providers: [AppService],
