@@ -15,7 +15,7 @@ console.log(process.env.POSTGRES_USER);
       port: 5432,
       password: "admin",
       username: "postgres",
-      entities: [],
+      autoLoadEntities: true,
       database: "linkedin",
       synchronize: true,
       logging: true,
