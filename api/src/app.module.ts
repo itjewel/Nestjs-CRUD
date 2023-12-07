@@ -4,6 +4,7 @@ import { AppController } from "./app.controller";
 import { AppService } from "./app.service";
 import { ConfigModule } from "@nestjs/config";
 import { FeedModule } from "./feed/feed.module";
+import { UserModule } from "./users/users.module";
 
 console.log(process.env.POSTGRES_USER);
 @Module({
@@ -21,6 +22,7 @@ console.log(process.env.POSTGRES_USER);
       logging: true,
     }),
     FeedModule,
+    UserModule,
   ],
   controllers: [AppController],
   providers: [AppService],
