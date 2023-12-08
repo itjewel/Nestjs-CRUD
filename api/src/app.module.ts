@@ -5,6 +5,12 @@ import { AppService } from "./app.service";
 import { ConfigModule } from "@nestjs/config";
 import { FeedModule } from "./feed/feed.module";
 import { UserModule } from "./users/users.module";
+import { StudentService } from './student/student.service';
+import { StudentController } from './student/student.controller';
+import { StudentModule } from './student/student.module';
+import { StudentService } from './services/student/student.service';
+import { StudentController } from './controller/student/student.controller';
+import { StudentModule } from './student/student.module';
 
 console.log(process.env.POSTGRES_USER);
 @Module({
@@ -23,8 +29,9 @@ console.log(process.env.POSTGRES_USER);
     }),
     FeedModule,
     UserModule,
+    StudentModule,
   ],
-  controllers: [AppController],
-  providers: [AppService],
+  controllers: [AppController, StudentController],
+  providers: [AppService, StudentService],
 })
 export class AppModule {}
